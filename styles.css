@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 ::-webkit-scrollbar {
   width: 10px;
-  background-color: #fff;
-  outline: 2px solid rgb(208, 208, 208);
+  background-color: #f6f6f6;
+  /* outline: 2px solid rgb(208, 208, 208); */
 }
 ::-webkit-scrollbar-thumb {
   background: rgb(201, 201, 201);
@@ -29,13 +29,21 @@ body {
 .main-container {
   width: 100%;
   display: flex;
+  justify-content: flex-start;
   flex-direction: column;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .logo h1 {
   font-size: 35px;
   color: #4f6f52;
+  cursor: pointer;
 }
+/* ------------------------------- */
+/* Navbar */
+/* ------------------------------- */
 
 nav {
   display: flex;
@@ -81,11 +89,143 @@ nav ul li a:hover,
   background-color: #fff;
   color: #131842;
   outline: 1px solid #131842;
+  cursor: pointer;
 }
 
 /* 131842 */
 
+/* ------------------------------- */
+/* Hero-section */
+/* ------------------------------- */
 .hero-section img {
   width: 100%;
   position: absolute;
+  /* animation-direction: alternate;
+  animation-duration: 5s; */
+  top: 2rem;
+  animation-timeline: scroll();
+  overflow-x: hidden;
+}
+
+#clouds {
+  animation-name: animate-clouds;
+}
+
+@keyframes animate-clouds {
+  from {
+    /* top: 5vh; */
+    transform: translateY(50px);
+  }
+  to {
+    /* top: 10vh; */
+    transform: translateY(20px);
+  }
+}
+
+#sun {
+  animation-name: animate-sun;
+}
+
+@keyframes animate-sun {
+  from {
+    top: 20vh;
+  }
+  to {
+    top: -35vh;
+  }
+}
+
+#birds {
+  animation-name: animate-birds;
+}
+
+@keyframes animate-birds {
+  from {
+    transform: translateX(20vh) translateY(20vh);
+  }
+  to {
+    transform: translateX(-5vh) translateY(-5vh);
+  }
+}
+
+#mountain {
+  animation-name: animate-mountains;
+}
+
+@keyframes animate-mountains {
+  from {
+    top: 7vh;
+  }
+  to {
+    top: -4vh;
+  }
+}
+
+#heading,
+#para {
+  color: #54473f;
+  font-size: 60px;
+  text-align: center;
+  animation-name: animate-header;
+  animation-timeline: scroll();
+}
+
+@keyframes animate-header {
+  from {
+    top: 70vh;
+  }
+  to {
+    top: 30vh;
+  }
+}
+
+#para {
+  font-size: 26px;
+}
+
+#grass {
+  animation-name: animate-grass;
+}
+
+@keyframes animate-grass {
+  from {
+    top: 2vh;
+  }
+  to {
+    top: 5vh;
+  }
+}
+
+#water {
+  animation-name: animate-water;
+}
+
+@keyframes animate-water {
+  from {
+    top: 5vh;
+  }
+  to {
+    top: 0vh;
+  }
+}
+
+#trees {
+  animation-name: animate-trees;
+  position: relative;
+}
+
+@keyframes animate-trees {
+  from {
+    top: -30vh;
+  }
+  to {
+    top: -20vh;
+  }
+}
+
+footer {
+  background-color: #131842;
+  height: 10vh;
+  position: absolute;
+  top: 0;
 }
